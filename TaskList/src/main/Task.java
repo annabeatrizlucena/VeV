@@ -65,7 +65,7 @@ public class Task {
 		"Title: " + this.getTitle() + "\n"
 				+ "Description: " + this.getDescription() + "\n"
 				+ "Due date: " + this.getDueDate() + "\n" 
-				+ "Priority: " + this.getPriority() + "\n";
+				+ "Priority: " + this.getPriority();
 		
 		
 		return out;

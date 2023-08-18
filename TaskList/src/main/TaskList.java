@@ -18,7 +18,7 @@ public class TaskList {
 	public String listTasks() {
 		String listTasks = "";
 		for (Task task : this.tasks) {
-			listTasks = listTasks + task.toString() + ",";
+			listTasks = listTasks + task.toString() + ",\n";
 		}
 		return listTasks;
 	}
