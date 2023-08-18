@@ -40,4 +40,9 @@ public class Task {
 		return this.id;
 	}
 
+	public void setPriority(Priority high) {
+		this.priority = high;
+		
+	}
+
 }
