@@ -2,15 +2,18 @@ package main;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.UUID;
 
 public class Task {
 	
+	private String id;
     private String title;
     private String description;
     private LocalDate dueDate;
     private Priority priority;
 
     public Task(String title, String description, LocalDate dueDate, Priority priority) {
+    	this.id = UUID.randomUUID().toString();
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
@@ -31,6 +34,10 @@ public class Task {
 
 	public Priority getPriority() {
 		return this.priority;
+	}
+
+	public String getId() {
+		return this.id;
 	}
 
 }
