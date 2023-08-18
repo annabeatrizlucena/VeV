@@ -45,18 +45,18 @@ public class Task {
 		
 	}
 
-	public void setTitle(String string) {
-		this.title = string;
+	public void setTitle(String title) {
+		this.title = title;
 		
 	}
 
-	public void setDescription(String string) {
-		this.description = string;
+	public void setDescription(String description) {
+		this.description = description;
 		
 	}
 
-	public void setDueDate(LocalDate parse) {
-		this.dueDate = parse;
+	public void setDueDate(LocalDate dueDate) {
+		this.dueDate = dueDate;
 		
 	}
 
