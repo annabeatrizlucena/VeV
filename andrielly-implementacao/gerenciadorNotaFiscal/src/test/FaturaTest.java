@@ -26,10 +26,9 @@ class FaturaTest {
 	}
 	
 	@Test
-	void testFaturaCreationValorFaturaMaiorQueZero() {
+	void testFaturaCreationValorFaturaMenorQueZero() {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 0.0));
 	}
-	
 
 	@Test
 	void testFaturaGetAtributos() {
@@ -56,4 +55,27 @@ class FaturaTest {
 		fatura.setValor(200.0);
 		assertEquals(200.0, fatura.getValor());
 	}
+	
+	@Test
+	void testSetNomeNull() {
+		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> fatura.setNome(null));
+	}
+	
+	@Test
+	void testSetEnderecoNull() {
+		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> fatura.setEndereco(null));
+	}
+	
+	@Test
+	void testSetValorFaturaMenorIgualQueZero() {
+		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> fatura.setValor(0.0));
+		Assertions.assertThrows(IllegalArgumentException.class, () -> fatura.setValor(-1.0));
+	}
+
 }
