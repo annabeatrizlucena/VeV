@@ -18,6 +18,10 @@ public class NotaFiscal {
 
 	private double calculaImposto(String tipoServico, double valorFatura) {
 		double valorImposto = 0.0;
+		if (tipoServico == null) {
+			tipoServico = "";
+		}
+		
 		if (tipoServico.equals("CONSULTORIA")) {
 			valorImposto = 0.25 * valorFatura;
 		} else if (tipoServico.equals("TREINAMENTO")) {
