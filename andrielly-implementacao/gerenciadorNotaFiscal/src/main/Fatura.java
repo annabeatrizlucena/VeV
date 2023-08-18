@@ -9,10 +9,14 @@ public class Fatura {
 	private String tipoServico;
 	private double valor;
 	
-	public Fatura(String nome, String endereco, String tipoServico, double valorFatura) {
-		if (nome == null || endereco == null || valorFatura <= 0.0) {
+	public Fatura(String nome, String endereco, String tipoServico, double valor) {
+		if (nome == null || endereco == null || valor <= 0.0) {
 			throw new IllegalArgumentException("Campos invalidos");
 		}
+		this.nome = nome;
+		this.endereco = endereco;
+		this.tipoServico = tipoServico;
+		this.valor = valor;
 		isValid = true;
 	}
 
