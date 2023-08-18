@@ -39,4 +39,21 @@ class FaturaTest {
 		assertEquals("CONSULTORIA", fatura.getTipoServico());
 		assertEquals(100.0, fatura.getValor());
 	}
+	
+	@Test
+	void testFaturaSetAtributos() {
+		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		
+		fatura.setNome("Joarquim Silva");
+		assertEquals("Joarquim Silva", fatura.getNome());
+		
+		fatura.setEndereco("Rua Silva Barbosa, 975, Campina Grande, Paraíba");
+		assertEquals("Rua Silva Barbosa, 975, Campina Grande, Paraíba", fatura.getEndereco());
+		
+		fatura.setEndereco("TREINAMENTO");
+		assertEquals("TREINAMENTO", fatura.getTipoServico());
+		
+		fatura.setValor(200.0);
+		assertEquals(200.0, fatura.getValor());
+	}
 }
