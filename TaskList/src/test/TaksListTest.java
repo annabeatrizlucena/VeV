@@ -122,7 +122,7 @@ class TaksListTest {
         assertEquals(taskList.listTasks(), "Title: Test Task List\n"
 				+ "Description: Implement tests for the task list manager\n"
 				+ "Due date: 2023-08-21\n"
-				+ "Priority: HIGH,\n"
+				+ "Priority: LOW,\n"
 				+ "Title: Test Task\n"
 				+ "Description: Implement tests for the task entity\n"
 				+ "Due date: 2023-08-30\n"

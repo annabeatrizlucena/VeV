@@ -16,9 +16,15 @@ public class TaskList {
 		return this.tasks.size();
 	}
 	
+	private List<Task> getTasksOrderedByDueDateAndPriority() {
+        List<Task> sortedTasks = new ArrayList<>(tasks);
+        sortedTasks.sort(TaskComparators.DUE_DATE_AND_PRIORITY_COMPARATOR);
+        return sortedTasks;
+    }
+	
 	public String listTasks() {
 		String listTasks = "";
-		for (Task task : this.tasks) {
+		for (Task task : this.getTasksOrderedByDueDateAndPriority()) {
 			listTasks = listTasks + task.toString() + ",\n";
 		}
 		return listTasks;
