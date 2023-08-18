@@ -29,5 +29,14 @@ class FaturaTest {
 	void testFaturaCreationValorFaturaMaiorQueZero() {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 0.0));
 	}
+	
 
+	@Test
+	void testFaturaGetAtributos() {
+		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		assertEquals("Jose Silva", fatura.getNome());
+		assertEquals("Rua Silva Barbosa, 975", fatura.getEndereco());
+		assertEquals("CONSULTORIA", fatura.getTipoServico());
+		assertEquals(100.0, fatura.getValor());
+	}
 }
