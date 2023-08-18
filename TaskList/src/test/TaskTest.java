@@ -6,7 +6,6 @@ import main.Task;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,7 +20,7 @@ class TaskTest {
         assertEquals("2023-08-21", task.getDueDate().toString());
         assertEquals(Priority.HIGH, task.getPriority());
     }
-}  
+
     @Test
     public void testTaskIdUniqueness() {
         Task task1 = new Task("Title", "Description", LocalDate.parse("2023-08-31", DateTimeFormatter.ISO_DATE), Priority.MEDIUM);
