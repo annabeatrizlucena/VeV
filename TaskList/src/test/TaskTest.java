@@ -14,13 +14,12 @@ class TaskTest {
     @Test
     public void testTaskCreation() {
         Task task = new Task("Test Task List", "Implement tests for the task list manager", LocalDate.parse("2023-08-21", DateTimeFormatter.ISO_DATE), Priority.HIGH);
-        System.out.println(task.getDueDate());
         assertEquals("Test Task List", task.getTitle());
         assertEquals("Implement tests for the task list manager", task.getDescription());
         assertEquals("2023-08-21", task.getDueDate().toString());
         assertEquals(Priority.HIGH, task.getPriority());
     }
-
+  
     @Test
     public void testTaskIdUniqueness() {
         Task task1 = new Task("Title", "Description", LocalDate.parse("2023-08-31", DateTimeFormatter.ISO_DATE), Priority.MEDIUM);
