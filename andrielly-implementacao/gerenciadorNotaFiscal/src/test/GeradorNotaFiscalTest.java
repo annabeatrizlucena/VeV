@@ -34,5 +34,11 @@ class GeradorNotaFiscalTest {
 		NotaFiscal nota = gerador.geraNota("Jose Silva", "Rua Silva Barbosa, 975", "OUTRO", 100.0);
 		assertEquals(6.0, nota.getImposto());
 	}
+	
+	@Test
+	void testTipoNull() {
+		NotaFiscal nota = gerador.geraNota("Jose Silva", "Rua Silva Barbosa, 975", null, 100.0);
+		assertEquals(6.0, nota.getImposto());
+	}
 
 }
