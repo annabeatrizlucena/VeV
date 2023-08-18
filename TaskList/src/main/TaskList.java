@@ -1,5 +1,6 @@
 package main;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +41,16 @@ public class TaskList {
         Task taskToUpdate = getTask(taskId);
         if (taskToUpdate != null) {
             taskToUpdate.setPriority(priority);
+        }
+    }
+
+	public void updateTask(String taskId, Task updatedTask) {
+        Task taskToUpdate = getTask(taskId);
+        if (taskToUpdate != null) {
+            taskToUpdate.setTitle(updatedTask.getTitle());
+            taskToUpdate.setDescription(updatedTask.getDescription());
+            taskToUpdate.setDueDate(updatedTask.getDueDate());
+            taskToUpdate.setPriority(updatedTask.getPriority());
         }
     }
 }

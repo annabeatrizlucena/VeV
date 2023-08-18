@@ -90,8 +90,8 @@ class TaksListTest {
 				+ "Due date: 2023-08-21\n"
 				+ "Priority: HIGH,\n");
 		
-		taskList.updateTask(taskId, "New Test task list", "Upgrade tests for the task list manager\n", LocalDate.parse("2023-08-20", DateTimeFormatter.ISO_DATE), Priority.LOW);
-		assertEquals(taskList.listTasks(), "New Test task list\n"
+		taskList.updateTask(taskId, new Task("New Test task list", "Upgrade tests for the task list manager", LocalDate.parse("2023-08-20", DateTimeFormatter.ISO_DATE), Priority.LOW));
+		assertEquals(taskList.listTasks(), "Title: New Test task list\n"
 				+ "Description: Upgrade tests for the task list manager\n"
 				+ "Due date: 2023-08-20\n"
 				+ "Priority: LOW,\n");

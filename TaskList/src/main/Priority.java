@@ -2,6 +2,7 @@ package main;
 
 public enum Priority {
 	HIGH,
-	MEDIUM
+	MEDIUM,
+	LOW
 
 }
