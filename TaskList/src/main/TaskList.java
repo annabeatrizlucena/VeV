@@ -14,4 +14,8 @@ public class TaskList {
 	public int getNumberOfTasks() {
 		return this.tasks.size();
 	}
+
+	public String listTasks() {
+		return "";
+	}
 }
