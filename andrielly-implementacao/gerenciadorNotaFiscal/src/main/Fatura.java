@@ -25,6 +25,9 @@ public class Fatura {
 	}
 
 	public void setNome(String nome) {
+		if (nome == null) {
+			throw new IllegalArgumentException("Campo invalido");
+		}
 		this.nome = nome;
 	}
 
@@ -33,6 +36,9 @@ public class Fatura {
 	}
 
 	public void setEndereco(String endereco) {
+		if (endereco == null) {
+			throw new IllegalArgumentException("Campo invalido");
+		}
 		this.endereco = endereco;
 	}
 
@@ -49,6 +55,9 @@ public class Fatura {
 	}
 
 	public void setValor(double valor) {
+		if (valor <= 0.0) {
+			throw new IllegalArgumentException("Campo invalido");
+		}
 		this.valor = valor;
 	}
 
