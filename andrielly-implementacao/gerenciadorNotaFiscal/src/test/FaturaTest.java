@@ -7,8 +7,9 @@ import org.junit.jupiter.api.Test;
 class FaturaTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testFaturaCreation() {
+		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		assertTrue(fatura.isValid);
 	}
 
 }
