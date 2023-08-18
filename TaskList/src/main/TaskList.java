@@ -31,4 +31,15 @@ public class TaskList {
 	public void deleteTask(String taskId) {
 		this.tasks.removeIf(task -> task.getId().equals(taskId));
 	}
+
+	public Task getTask(String taskId) {
+        return tasks.stream().filter(task -> task.getId().equals(taskId)).findFirst().orElse(null);
+    }
+
+    public void setTaskPriority(String taskId, Priority priority) {
+        Task taskToUpdate = getTask(taskId);
+        if (taskToUpdate != null) {
+            taskToUpdate.setPriority(priority);
+        }
+    }
 }
