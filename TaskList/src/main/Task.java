@@ -59,5 +59,16 @@ public class Task {
 		this.dueDate = dueDate;
 		
 	}
+	
+	public String toString() {
+		String out =
+		"Title: " + this.getTitle() + "\n"
+				+ "Description: " + this.getDescription() + "\n"
+				+ "Due date: " + this.getDueDate() + "\n" 
+				+ "Priority: " + this.getPriority() + "\n";
+		
+		
+		return out;
+	}
 
 }

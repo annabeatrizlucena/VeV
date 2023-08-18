@@ -27,6 +27,7 @@ class TaksListTest {
 	
 	@Test
 	void testListTasksEmptyTaskList() {
+		System.out.println(taskList.listTasks());
 		assertEquals(taskList.listTasks(), "");
 	}
 	
