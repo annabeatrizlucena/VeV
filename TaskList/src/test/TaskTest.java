@@ -49,21 +49,21 @@ class TaskTest {
         assertEquals(Priority.MEDIUM, task.getPriority());
     }
 
-//    @Test
-//    public void testTaskSetters() {
-//    	Task task = new Task("Test Task List", "Implement tests for the task list manager", LocalDate.parse("2023-08-21", DateTimeFormatter.ISO_DATE), Priority.MEDIUM);
-//
-//        task.setTitle("Updated Test Task List");
-//        assertEquals("Updated Test Task List", task.getTitle());
-//
-//        task.setDescription("Updated Implement tests for the task list manager");
-//        assertEquals("Updated Implement tests for the task list manager", task.getDescription());
-//
-//        task.setDueDate(LocalDate.parse("2023-09-15", DateTimeFormatter.ISO_DATE));
-//        assertEquals("2023-09-15", task.getDueDate());
-//
-//        task.setPriority(Priority.HIGH);
-//        assertEquals(Priority.HIGH, task.getPriority());
-//    }
-//    
+    @Test
+    public void testTaskSetters() {
+    	Task task = new Task("Test Task List", "Implement tests for the task list manager", LocalDate.parse("2023-08-21", DateTimeFormatter.ISO_DATE), Priority.MEDIUM);
+
+        task.setTitle("Updated Test Task List");
+        assertEquals("Updated Test Task List", task.getTitle());
+
+        task.setDescription("Updated Implement tests for the task list manager");
+        assertEquals("Updated Implement tests for the task list manager", task.getDescription());
+
+        task.setDueDate(LocalDate.parse("2023-09-15", DateTimeFormatter.ISO_DATE));
+        assertEquals("2023-09-15", task.getDueDate().toString());
+
+        task.setPriority(Priority.HIGH);
+        assertEquals(Priority.HIGH, task.getPriority());
+    }
+    
 }
