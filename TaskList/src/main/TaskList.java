@@ -27,4 +27,8 @@ public class TaskList {
 		this.tasks.add(newTask);
 		return newTask.getId();
 	}
+
+	public void deleteTask(String taskId) {
+		this.tasks.removeIf(task -> task.getId().equals(taskId));
+	}
 }
