@@ -10,4 +10,8 @@ public class TaskList {
     public TaskList() {
         this.tasks = new ArrayList<>();
     }
+
+	public int getNumberOfTasks() {
+		return 0;
+	}
 }
