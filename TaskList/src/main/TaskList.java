@@ -22,4 +22,9 @@ public class TaskList {
 		}
 		return listTasks;
 	}
+
+	public String addTask(Task newTask) {
+		this.tasks.add(newTask);
+		return newTask.getId();
+	}
 }
