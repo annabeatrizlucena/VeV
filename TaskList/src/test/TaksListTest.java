@@ -130,7 +130,7 @@ class TaksListTest {
 	}
 	
 	@Test
-	public void testSetTaskPriority() {
+	public void testListAfterSetTaskPriority() {
 		Task task = new Task("Test Task List", "Implement tests for the task list manager", LocalDate.parse("2023-08-21", DateTimeFormatter.ISO_DATE), Priority.LOW);
 		String taskId = taskList.addTask(task);
 		assertEquals(taskList.listTasks(), "Title: Test Task List\n"
