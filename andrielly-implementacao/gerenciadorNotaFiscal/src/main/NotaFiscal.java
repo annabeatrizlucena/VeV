@@ -23,7 +23,7 @@ public class NotaFiscal {
 		} else if (tipoServico.equals("TREINAMENTO")) {
 			valorImposto = 0.15 * valorFatura;
 		} else {
-			valorImposto = 0.6 * valorFatura;
+			valorImposto = 0.06 * valorFatura;
 		}
 		
 		return valorImposto;
