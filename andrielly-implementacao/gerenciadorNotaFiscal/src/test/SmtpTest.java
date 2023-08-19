@@ -16,7 +16,7 @@ class SmtpTest {
 		
 		NotaFiscal notaFiscal = new NotaFiscal(fatura);
 		
-		assertEquals("salvando no banco", Smtp.envia(notaFiscal));
+		assertEquals("enviando por email", Smtp.envia(notaFiscal));
 	}
 
 }

@@ -1,5 +1,7 @@
 package main;
 
+import util.*;
+
 public class GeradorNotaFiscal {
 
 	public NotaFiscal geraNotaFiscal(Fatura fatura) {
@@ -8,15 +10,15 @@ public class GeradorNotaFiscal {
 	}
 
 	public String salvaNoBanco(NotaFiscal nota) {
-		return "salvando no banco";
+		return NotaFiscalDao.salva(nota);
 	}
 
 	public String enviaEmail(NotaFiscal nota) {
-		return "enviando por email";
+		return Smtp.envia(nota);
 	}
 
 	public String enviaParaSap(NotaFiscal nota) {
-		return "enviando pro sap";
+		return Sap.envia(nota);
 	}
 
 }

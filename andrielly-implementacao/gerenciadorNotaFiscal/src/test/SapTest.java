@@ -16,7 +16,7 @@ class SapTest {
 		
 		NotaFiscal notaFiscal = new NotaFiscal(fatura);
 		
-		assertEquals("salvando no banco", Sap.envia(notaFiscal));
+		assertEquals("enviando pro sap", Sap.envia(notaFiscal));
 	}
 
 }
