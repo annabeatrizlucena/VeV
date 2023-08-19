@@ -37,4 +37,9 @@ public class NotaFiscal {
 		return this.fatura;
 	}
 
+	public void setFatura(Fatura fatura2) {
+		this.fatura = fatura2;
+		this.imposto = calculaImposto(fatura2);
+	}
+
 }
