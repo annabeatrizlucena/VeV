@@ -12,7 +12,7 @@ public class NotaFiscal {
 		isValid = true;
 	}
 	
-	public double calculaImposto(Fatura fatura) {
+	private double calculaImposto(Fatura fatura) {
 		double valorFatura = fatura.getValor();
 		String tipoServico = fatura.getTipoServico();
 		
