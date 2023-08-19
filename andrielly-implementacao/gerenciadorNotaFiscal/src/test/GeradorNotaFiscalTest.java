@@ -38,14 +38,14 @@ class GeradorNotaFiscalTest {
 	void testEnviaEmail() {
 		NotaFiscal nota = gerador.geraNotaFiscal(fatura);
 		String saida = gerador.enviaEmail(nota);
-		assertEquals("enviando pro sap", saida);
+		assertEquals("enviando por email", saida);
 	}
 	
 	@Test
 	void testEnviaParaSap() {
 		NotaFiscal nota = gerador.geraNotaFiscal(fatura);
 		String saida = gerador.enviaParaSap(nota);
-		assertEquals("enviando por email", saida);
+		assertEquals("enviando pro sap", saida);
 	}
 	
 }
