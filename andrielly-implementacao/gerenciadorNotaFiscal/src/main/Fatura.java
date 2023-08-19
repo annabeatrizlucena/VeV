@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Objects;
+
 public class Fatura {
 
 	public boolean isValid;
@@ -59,6 +61,25 @@ public class Fatura {
 			throw new IllegalArgumentException("Campo invalido");
 		}
 		this.valor = valor;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(endereco, isValid, nome, tipoServico, valor);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Fatura other = (Fatura) obj;
+		return Objects.equals(endereco, other.endereco) && isValid == other.isValid && Objects.equals(nome, other.nome)
+				&& Objects.equals(tipoServico, other.tipoServico)
+				&& Double.doubleToLongBits(valor) == Double.doubleToLongBits(other.valor);
 	}
 
 
