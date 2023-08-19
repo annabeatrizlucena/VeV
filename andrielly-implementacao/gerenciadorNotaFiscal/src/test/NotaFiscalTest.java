@@ -38,9 +38,15 @@ class NotaFiscalTest {
 	@Test
 	void testCalculaImpostoOutroServico() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "OUTRO", 100.0);
+		Fatura fatura2 = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "SERVICOS GERAIS", 100.0);
+		Fatura fatura3 = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", null, 100.0);
 		
 		NotaFiscal notaFiscal = new NotaFiscal(fatura);
+		NotaFiscal notaFiscal2 = new NotaFiscal(fatura2);
+		NotaFiscal notaFiscal3 = new NotaFiscal(fatura3);
 
 		assertEquals(6.0, notaFiscal.getImposto());
+		assertEquals(6.0, notaFiscal2.getImposto());
+		assertEquals(6.0, notaFiscal3.getImposto());
 	}
 }
