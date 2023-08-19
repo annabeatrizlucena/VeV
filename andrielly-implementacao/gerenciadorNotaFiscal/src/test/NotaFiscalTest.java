@@ -14,7 +14,7 @@ class NotaFiscalTest {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
 		
 		NotaFiscal notaFiscal = new NotaFiscal(fatura);
-		assertTrue(fatura.isValid);
+		assertTrue(notaFiscal.isValid);
 	}
 
 }
