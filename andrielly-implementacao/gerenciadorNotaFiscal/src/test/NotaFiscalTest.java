@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import main.Fatura;
@@ -73,5 +74,14 @@ class NotaFiscalTest {
 		assertEquals(fatura2, notaFiscal.getFatura());
 		assertEquals(62.5, notaFiscal.getImposto());
 		
+	}
+	
+	@Test
+	void testSetFaturaNull() {
+		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		
+		NotaFiscal notaFiscal = new NotaFiscal(fatura);
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> notaFiscal.setFatura(null));
 	}
 }
