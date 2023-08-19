@@ -4,15 +4,17 @@ public class NotaFiscal {
 	
 	public boolean isValid;
 	private Fatura fatura;
+	private double imposto;
 
 	public NotaFiscal(Fatura fatura) {
 		this.fatura = fatura;
+		this.imposto = calculaImposto(this.fatura);
 		isValid = true;
 	}
-
-	public double getImposto() {
-		double valorFatura = this.fatura.getValor();
-		String tipoServico = this.fatura.getTipoServico();
+	
+	public double calculaImposto(Fatura fatura) {
+		double valorFatura = fatura.getValor();
+		String tipoServico = fatura.getTipoServico();
 		
 		if (tipoServico.equals("CONSULTORIA")) {
 			return valorFatura * 0.25;
@@ -21,6 +23,10 @@ public class NotaFiscal {
 		} else {
 			return valorFatura * 0.06;
 		}
+	}
+
+	public double getImposto() {
+		return this.imposto;
 	}
 
 }
