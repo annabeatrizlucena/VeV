@@ -81,7 +81,7 @@ class NotaFiscalTest {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
 		
 		NotaFiscal notaFiscal = new NotaFiscal(fatura);
-		
-		Assertions.assertThrows(IllegalArgumentException.class, () -> notaFiscal.setFatura(null));
+		notaFiscal.setFatura(null);
+		assertEquals(fatura, notaFiscal.getFatura());
 	}
 }
