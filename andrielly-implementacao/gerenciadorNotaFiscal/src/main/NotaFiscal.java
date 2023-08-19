@@ -16,6 +16,10 @@ public class NotaFiscal {
 		double valorFatura = fatura.getValor();
 		String tipoServico = fatura.getTipoServico();
 		
+		if (tipoServico == null) {
+			tipoServico = "";
+		}
+		
 		if (tipoServico.equals("CONSULTORIA")) {
 			return valorFatura * 0.25;
 		} else if (tipoServico.equals("TREINAMENTO")) {
