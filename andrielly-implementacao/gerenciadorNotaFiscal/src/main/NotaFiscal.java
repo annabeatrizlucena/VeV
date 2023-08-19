@@ -38,6 +38,10 @@ public class NotaFiscal {
 	}
 
 	public void setFatura(Fatura fatura2) {
+		if (fatura2 == null) {
+			throw new IllegalArgumentException("Campo invalido");
+		}
+		
 		this.fatura = fatura2;
 		this.imposto = calculaImposto(fatura2);
 	}
