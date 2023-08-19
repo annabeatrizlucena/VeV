@@ -77,5 +77,20 @@ class FaturaTest {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> fatura.setValor(0.0));
 		Assertions.assertThrows(IllegalArgumentException.class, () -> fatura.setValor(-1.0));
 	}
-
+	
+	@Test
+	void testEquals() {
+		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		Fatura fatura2 = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		
+		assertTrue(fatura.equals(fatura2));
+	}
+	
+	@Test
+	void testHashCode() {
+		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		Fatura fatura2 = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		
+		assertEquals(fatura.hashCode(), fatura2.hashCode());
+	}
 }
