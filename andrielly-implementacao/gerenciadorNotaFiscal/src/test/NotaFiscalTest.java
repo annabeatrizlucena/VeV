@@ -49,4 +49,14 @@ class NotaFiscalTest {
 		assertEquals(6.0, notaFiscal2.getImposto());
 		assertEquals(6.0, notaFiscal3.getImposto());
 	}
+	
+	@Test
+	void testNotaFiscalGetAtributos() {
+		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		
+		NotaFiscal notaFiscal = new NotaFiscal(fatura);
+		
+		assertEquals(fatura, notaFiscal.getFatura());
+		assertEquals(25.0, notaFiscal.getImposto());
+	}
 }
