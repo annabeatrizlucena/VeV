@@ -12,41 +12,40 @@ import main.NotaFiscal;
 class GeradorNotaFiscalTest {
 	
 	private GeradorNotaFiscal gerador;
+	private Fatura fatura;
 	
 	@BeforeEach
 	void inicializaGerador() {
 		gerador = new GeradorNotaFiscal();
+		fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		
 	}
 	
 	@Test
 	void testGeraNotaFiscal() {
-		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
-		
 		NotaFiscal nota = gerador.geraNotaFiscal(fatura);
+		assertEquals(25.0, nota.getImposto());
 	}
 
 	@Test
 	void testSalvaNoBanco() {
-		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
-
 		NotaFiscal nota = gerador.geraNotaFiscal(fatura);
 		String saida = gerador.salvaNoBanco(nota);
+		assertEquals("salvando no banco", saida);
 	}
 	
 	@Test
 	void testEnviaEmail() {
-		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
-
 		NotaFiscal nota = gerador.geraNotaFiscal(fatura);
 		String saida = gerador.enviaEmail(nota);
+		assertEquals("enviando pro sap", saida);
 	}
 	
 	@Test
 	void testEnviaParaSap() {
-		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
-
 		NotaFiscal nota = gerador.geraNotaFiscal(fatura);
 		String saida = gerador.enviaParaSap(nota);
+		assertEquals("enviando por email", saida);
 	}
 	
 }
