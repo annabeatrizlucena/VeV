@@ -33,4 +33,8 @@ public class NotaFiscal {
 		return this.imposto;
 	}
 
+	public Fatura getFatura() {
+		return this.fatura;
+	}
+
 }
