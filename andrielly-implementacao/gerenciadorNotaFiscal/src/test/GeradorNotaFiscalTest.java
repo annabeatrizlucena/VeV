@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import main.Fatura;
 import main.GeradorNotaFiscal;
 import main.NotaFiscal;
+import main.TipoServico;
 
 class GeradorNotaFiscalTest {
 	
@@ -17,7 +18,7 @@ class GeradorNotaFiscalTest {
 	@BeforeEach
 	void inicializaGerador() {
 		gerador = new GeradorNotaFiscal();
-		fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", "CONSULTORIA", 100.0);
+		fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100.0);
 		
 	}
 	

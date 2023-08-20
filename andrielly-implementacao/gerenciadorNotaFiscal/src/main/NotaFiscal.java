@@ -14,15 +14,15 @@ public class NotaFiscal {
 	
 	private double calculaImposto(Fatura fatura) {
 		double valorFatura = fatura.getValor();
-		String tipoServico = fatura.getTipoServico();
+		TipoServico tipoServico = fatura.getTipoServico();
 		
 		if (tipoServico == null) {
-			tipoServico = "";
+			tipoServico = TipoServico.OUTROS;
 		}
 		
-		if (tipoServico.equals("CONSULTORIA")) {
+		if (tipoServico.equals(TipoServico.CONSULTORIA)) {
 			return valorFatura * 0.25;
-		} else if (tipoServico.equals("TREINAMENTO")) {
+		} else if (tipoServico.equals(TipoServico.TREINAMENTO)) {
 			return valorFatura * 0.15;
 		} else {
 			return valorFatura * 0.06;

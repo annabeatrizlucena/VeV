@@ -8,10 +8,10 @@ public class Fatura {
 	
 	private String nome;
 	private String endereco;
-	private String tipoServico;
+	private TipoServico tipoServico;
 	private double valor;
 	
-	public Fatura(String nome, String endereco, String tipoServico, double valor) {
+	public Fatura(String nome, String endereco, TipoServico tipoServico, double valor) {
 		if (nome == null || endereco == null || valor <= 0.0) {
 			throw new IllegalArgumentException("Campos invalidos");
 		}
@@ -44,11 +44,11 @@ public class Fatura {
 		this.endereco = endereco;
 	}
 
-	public String getTipoServico() {
+	public TipoServico getTipoServico() {
 		return tipoServico;
 	}
 
-	public void setTipoServico(String tipoServico) {
+	public void setTipoServico(TipoServico tipoServico) {
 		this.tipoServico = tipoServico;
 	}
 
