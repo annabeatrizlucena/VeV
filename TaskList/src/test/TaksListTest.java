@@ -107,6 +107,22 @@ class TaksListTest {
 	}
 	
 	@Test
+	void testUpdateCreatedTaskWithNullValues() {
+		Task newTask = new Task("Test Task List", "Implement tests for the task list manager", LocalDate.parse("2023-08-21", DateTimeFormatter.ISO_DATE), Priority.HIGH);
+		String taskId = taskList.addTask(newTask);
+		assertEquals(taskList.listTasks(), "Title: Test Task List\n"
+				+ "Description: Implement tests for the task list manager\n"
+				+ "Due date: 2023-08-21\n"
+				+ "Priority: HIGH,\n");
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> taskList.updateTask(taskId, new Task(null, null, null, null)));
+		assertEquals(taskList.listTasks(), "Title: Test Task List\n"
+				+ "Description: Implement tests for the task list manager\n"
+				+ "Due date: 2023-08-21\n"
+				+ "Priority: HIGH,\n");
+	}
+	
+	@Test
 	public void testListTasksByDateAndPriorityLevelEqual() {
 		Task task1 = new Task("Test Task List", "Implement tests for the task list manager", LocalDate.parse("2023-08-21", DateTimeFormatter.ISO_DATE), Priority.HIGH);
 		String taskId1 = taskList.addTask(task1);
