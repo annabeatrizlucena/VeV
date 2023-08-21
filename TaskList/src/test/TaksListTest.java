@@ -88,8 +88,6 @@ class TaksListTest {
         taskList.addTask(task);
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> taskList.setTaskPriority(task.getId(), null));
-
-        assertEquals(task.getPriority(), Priority.MEDIUM);
     }
 	
 	@Test

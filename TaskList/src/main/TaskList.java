@@ -46,6 +46,9 @@ public class TaskList {
     public void setTaskPriority(String taskId, Priority priority) {
         Task taskToUpdate = getTask(taskId);
         if (taskToUpdate != null) {
+        	if (priority == null) {
+        		throw new IllegalArgumentException("Invalid Priority");
+        	}
             taskToUpdate.setPriority(priority);
         }
     }
