@@ -56,6 +56,9 @@ public class TaskList {
 	public void updateTask(String taskId, Task updatedTask) {
         Task taskToUpdate = getTask(taskId);
         if (taskToUpdate != null) {
+        	if (updatedTask.getTitle() == null || updatedTask.getDescription() == null || updatedTask.getDueDate() == null || updatedTask.getPriority() == null) {
+        		throw new IllegalArgumentException("Invalid value");
+        	}
             taskToUpdate.setTitle(updatedTask.getTitle());
             taskToUpdate.setDescription(updatedTask.getDescription());
             taskToUpdate.setDueDate(updatedTask.getDueDate());
