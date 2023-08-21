@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -77,6 +78,16 @@ class TaksListTest {
         taskList.addTask(task);
 
         taskList.setTaskPriority(task.getId(), Priority.MEDIUM);
+
+        assertEquals(task.getPriority(), Priority.MEDIUM);
+    }
+	
+	@Test
+    public void testSetTaskPriorityNull() {
+        Task task = new Task("Test Task List", "Implement tests for the task list manager", LocalDate.parse("2023-08-21", DateTimeFormatter.ISO_DATE), Priority.HIGH);
+        taskList.addTask(task);
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> taskList.setTaskPriority(task.getId(), null));
 
         assertEquals(task.getPriority(), Priority.MEDIUM);
     }
