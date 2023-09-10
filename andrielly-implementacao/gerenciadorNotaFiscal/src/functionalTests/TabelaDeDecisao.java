@@ -11,7 +11,7 @@ import main.GeradorNotaFiscal;
 import main.NotaFiscal;
 import main.TipoServico;
 
-class ParticaoPorEquivalencia {
+class TabelaDeDecisao {
 	private GeradorNotaFiscal gerador;
 
 	@BeforeEach
@@ -66,4 +66,5 @@ class ParticaoPorEquivalencia {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.OUTROS, -1));
 
 	}
+
 }
