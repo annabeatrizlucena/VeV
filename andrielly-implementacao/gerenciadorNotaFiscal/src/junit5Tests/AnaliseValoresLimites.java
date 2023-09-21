@@ -20,14 +20,15 @@ class AnaliseValoresLimites {
 		
 	}
 
-
 	@Test
+	@ConsultoriaTest
 	void testAbaixoDoMinimo() {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, -1));
 
 	}
 	
 	@Test
+	@ConsultoriaTest
 	void testIgualAMinimo() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 0);
 
@@ -37,6 +38,7 @@ class AnaliseValoresLimites {
 	}
 	
 	@Test
+	@ConsultoriaTest
 	void testAcimaDoMinimo() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 1);
 
@@ -46,6 +48,7 @@ class AnaliseValoresLimites {
 	}
 	
 	@Test
+	@ConsultoriaTest
 	void testValorQualquer() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100);
 
