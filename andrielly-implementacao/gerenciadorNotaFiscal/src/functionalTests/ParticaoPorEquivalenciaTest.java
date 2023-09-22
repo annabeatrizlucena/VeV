@@ -1,19 +1,17 @@
-package junit5Tests;
+package functionalTests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.EnumSource;
 
 import main.Fatura;
 import main.GeradorNotaFiscal;
 import main.NotaFiscal;
 import main.TipoServico;
 
-class TabelaDeDecisao {
+class ParticaoPorEquivalenciaTest {
 	private GeradorNotaFiscal gerador;
 
 	@BeforeEach
@@ -22,8 +20,8 @@ class TabelaDeDecisao {
 		
 	}
 
+
 	@Test
-	@ConsultoriaTest
 	void testConsultoria() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100);
 
@@ -33,7 +31,6 @@ class TabelaDeDecisao {
 	}
 
 	@Test
-	@TreinamentoTest
 	void testTreinamento() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.TREINAMENTO, 100);
 
@@ -43,7 +40,6 @@ class TabelaDeDecisao {
 	}
 
 	@Test
-	@OutroServicoTest
 	void testOutro() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.OUTROS, 100);
 
@@ -52,15 +48,22 @@ class TabelaDeDecisao {
 
 	}
 	
-	@ParameterizedTest
-	@EnumSource(TipoServico.class)
-	@ConsultoriaTest
-	@TreinamentoTest
-	@OutroServicoTest
-	void testValorInvalido(TipoServico servico) {
+	@Test
+	void testConsultoriaEValorInvalido() {
 
-		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura("Jose Silva", "Rua Silva Barbosa, 975", servico, -1));
+		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, -1));
 
 	}
 
+	@Test
+	void testTreinamentoEValorInvalido() {
+		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.TREINAMENTO, -1));
+
+	}
+
+	@Test
+	void testOutroEValorInvalido() {
+		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.OUTROS, -1));
+
+	}
 }

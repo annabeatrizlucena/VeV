@@ -11,7 +11,7 @@ import main.GeradorNotaFiscal;
 import main.NotaFiscal;
 import main.TipoServico;
 
-class AnaliseValoresLimites {
+class AnaliseValoresLimitesTest {
 	private GeradorNotaFiscal gerador;
 
 	@BeforeEach
