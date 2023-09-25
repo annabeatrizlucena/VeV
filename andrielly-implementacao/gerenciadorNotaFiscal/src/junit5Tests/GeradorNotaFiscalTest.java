@@ -3,6 +3,7 @@ package junit5Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import main.Fatura;
@@ -23,12 +24,14 @@ class GeradorNotaFiscalTest {
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de geração de nota fiscal")
 	void testGeraNotaFiscal() {
 		NotaFiscal nota = gerador.geraNotaFiscal(fatura);
 		assertEquals(25.0, nota.getImposto());
 	}
 
 	@Test
+	@DisplayName(value = "Teste de função de persistência no banco")
 	void testSalvaNoBanco() {
 		NotaFiscal nota = gerador.geraNotaFiscal(fatura);
 		String saida = gerador.salvaNoBanco(nota);
@@ -36,6 +39,7 @@ class GeradorNotaFiscalTest {
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de função de envio de e-mail")
 	void testEnviaEmail() {
 		NotaFiscal nota = gerador.geraNotaFiscal(fatura);
 		String saida = gerador.enviaEmail(nota);
@@ -43,6 +47,7 @@ class GeradorNotaFiscalTest {
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de função de envio para SAP")
 	void testEnviaParaSap() {
 		NotaFiscal nota = gerador.geraNotaFiscal(fatura);
 		String saida = gerador.enviaParaSap(nota);
