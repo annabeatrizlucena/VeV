@@ -12,6 +12,7 @@ import util.NotaFiscalDao;
 class NotaFiscalDaoTest {
 
 	@Test
+	@ConsultoriaTest
 	void testSalvaNota() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100.0);
 		
