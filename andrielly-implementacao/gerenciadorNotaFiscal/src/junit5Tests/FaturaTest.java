@@ -3,6 +3,7 @@ package junit5Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -13,6 +14,7 @@ import main.TipoServico;
 class FaturaTest {
 
 	@Test
+	@DisplayName(value = "Teste de criação de fatura")
 	@ConsultoriaTest
 	void testFaturaCreation() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100.0);
@@ -20,24 +22,28 @@ class FaturaTest {
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de criação de fatura com nome null")
 	@ConsultoriaTest
 	void testFaturaCreationNomeNull() {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura(null, "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100.0));
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de criação de fatura com endereço null")
 	@ConsultoriaTest
 	void testFaturaCreationEnderecoNull() {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura("Jose Silva", null, TipoServico.CONSULTORIA, 100.0));
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de criação de fatura com valor inválido")
 	@ConsultoriaTest
 	void testFaturaCreationValorFaturaMenorQueZero() {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 0.0));
 	}
 
 	@Test
+	@DisplayName(value = "Teste de recuperação de atributos de fatura")
 	@ConsultoriaTest
 	void testFaturaGetAtributos() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100.0);
@@ -48,6 +54,7 @@ class FaturaTest {
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de atualização de atributos de fatura")
 	@ConsultoriaTest
 	@TreinamentoTest
 	void testFaturaSetAtributos() {
@@ -67,6 +74,7 @@ class FaturaTest {
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de atualização de nome para null")
 	@ConsultoriaTest
 	void testSetNomeNull() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100.0);
@@ -75,6 +83,7 @@ class FaturaTest {
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de atualização de endereço para null")
 	@ConsultoriaTest
 	void testSetEnderecoNull() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100.0);
@@ -83,6 +92,7 @@ class FaturaTest {
 	}
 	
 	@ParameterizedTest
+	@DisplayName(value = "Teste de atualização de valor para valor inválido")
 	@ValueSource(doubles = {0.0, -1.0})
 	@ConsultoriaTest
 	void testSetValorFaturaMenorIgualQueZero(double value) {
@@ -92,6 +102,7 @@ class FaturaTest {
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de função equals de fatura")
 	@ConsultoriaTest
 	void testEquals() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100.0);
@@ -101,6 +112,7 @@ class FaturaTest {
 	}
 	
 	@Test
+	@DisplayName(value = "Teste de função hashCode de fatura")
 	@ConsultoriaTest
 	void testHashCode() {
 		Fatura fatura = new Fatura("Jose Silva", "Rua Silva Barbosa, 975", TipoServico.CONSULTORIA, 100.0);
