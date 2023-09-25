@@ -11,7 +11,7 @@ import main.GeradorNotaFiscal;
 import main.NotaFiscal;
 import main.TipoServico;
 
-class TabelaDeDecisao {
+class TabelaDeDecisaoTest {
 	private GeradorNotaFiscal gerador;
 
 	@BeforeEach
