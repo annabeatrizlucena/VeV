@@ -82,7 +82,6 @@ class FaturaTest {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> fatura.setEndereco(null));
 	}
 	
-	@Test
 	@ParameterizedTest
 	@ValueSource(doubles = {0.0, -1.0})
 	@ConsultoriaTest
